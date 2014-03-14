@@ -1,0 +1,22 @@
+<cms:Content xmlns:cms="cms" xmlns="http://www.w3.org/1999/xhtml" name="main" layout="default">
+    <h1>About layout</h1>
+
+    <cms:Content name="left">
+
+        <div class="box">
+            <h3>About Spreadshirt</h3>
+        </div>
+
+        <div class="box">
+            <h3>FAQ</h3>
+
+        </div>
+
+    </cms:Content>
+
+    <cms:ContentPlaceHolder name="main" />
+
+    <cms:Content name="right">
+
+    </cms:Content>
+</cms:Content>
