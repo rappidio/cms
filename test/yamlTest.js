@@ -38,6 +38,17 @@ describe("Yaml", function () {
 
     });
 
+    describe("Content", function () {
+
+        it("content should not start with newline", function () {
+
+            var documentParts = metaDataParser.getDocumentParts(content);
+            assert.notEqual(documentParts.content.substr(0, 1), "\n");
+        });
+
+
+    });
+
     describe("Yaml", function () {
 
         it("should parse yaml within markdown", function () {

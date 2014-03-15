@@ -3,7 +3,6 @@ title: Company History
 layout: about
 alias: .*-C5367
 ---
-
 # 2013
 
 ## October
