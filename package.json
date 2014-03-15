@@ -1,27 +1,31 @@
 {
-  "name": "cms",
-  "version": "0.1.0",
-  "description": "A proof of concept to deliver dynamic pages from git.",
-  "main": "server.js",
-  "scripts": {
-    "test": "grunt test"
-  },
-  "author": "Tony Findeisen",
-  "license": "MIT",
-  "dependencies": {
-    "express": "~3.4.7",
-    "colors": "~0.6.2",
-    "js-yaml": "~3.0.0",
-    "underscore": "~1.5.2",
-    "flow.js": "~0.2.6",
-    "xmldom": "~0.1.17",
-    "markdown": "~0.5.0",
-    "xpath": "0.0.5",
-    "requirejs": "~2.1.9",
-    "inherit.js": "~0.1.7"
-  },
-  "devDependencies": {
-    "mocha": "~1.16.1",
-    "chai": "~1.8.1"
-  }
+    "name": "cms",
+    "version": "0.1.0",
+    "description": "A proof of concept to deliver dynamic pages from git.",
+    "main": "index.js",
+    "scripts": {
+        "test": "grunt test"
+    },
+    "author": "rappid.io GbR <support@rappid.io> (http://rappid.io)",
+    "contributors": [
+        "Tony Findeisen <tony@rappidjs.com>",
+        "Marcus Krejpowicz <marcus@rappidjs.com>"
+    ],
+    "license": "MIT",
+    "dependencies": {
+        "express": "~3.4.7",
+        "colors": "~0.6.2",
+        "js-yaml": "~3.0.0",
+        "underscore": "~1.5.2",
+        "flow.js": "~0.2.6",
+        "xmldom": "~0.1.17",
+        "markdown": "~0.5.0",
+        "xpath": "0.0.5",
+        "requirejs": "~2.1.9",
+        "inherit.js": "~0.1.7"
+    },
+    "devDependencies": {
+        "mocha": "~1.16.1",
+        "chai": "~1.8.1"
+    }
 }
