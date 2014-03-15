@@ -1,4 +1,7 @@
-<cms:Content xmlns:cms="cms" xmlns="http://www.w3.org/1999/xhtml" name="main" layout="default">
+<!--
+layout: default
+-->
+<cms:Content xmlns:cms="cms" xmlns="http://www.w3.org/1999/xhtml" name="main">
     <h1>About layout</h1>
 
     <cms:Content name="left">

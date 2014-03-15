@@ -3,7 +3,8 @@ var assert = require('chai').assert,
     fs = require("fs");
 
 describe("Yaml", function () {
-    var content = fs.readFileSync(__dirname + "/test.md", "utf8");
+    var content = fs.readFileSync(__dirname + "/test.md", "utf8"),
+        contentXml = fs.readFileSync(__dirname + "/test.xml", "utf8");
 
     describe("Meta", function () {
 
@@ -15,6 +16,17 @@ describe("Yaml", function () {
                 "title: Company History\n" +
                 "layout: about\n" +
                 "alias: .*-C5367\n"
+            );
+            assert.ok(documentParts.content);
+
+        });
+
+        it("should parse xml meta data correctly", function () {
+
+            var documentParts = metaDataParser.getDocumentParts(contentXml);
+            assert.deepEqual(documentParts.meta,
+                "\n" +
+                    "layout: default\n"
             );
             assert.ok(documentParts.content);
 
