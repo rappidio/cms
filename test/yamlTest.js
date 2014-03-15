@@ -1,5 +1,5 @@
 var assert = require('chai').assert,
-    cms = require("../lib/cms.js"),
+    metaDataParser = require("../lib/helper/metaDataParser.js"),
     fs = require("fs");
 
 describe("Yaml", function () {
@@ -9,7 +9,7 @@ describe("Yaml", function () {
 
         it("should have meta data and content", function() {
 
-            var documentParts = cms.getDocumentParts(content);
+            var documentParts = metaDataParser.getDocumentParts(content);
             assert.deepEqual(documentParts.meta,
                 "\n" +
                 "title: Company History\n" +
@@ -22,7 +22,7 @@ describe("Yaml", function () {
 
         it("should have no meta data", function () {
 
-            var documentParts = cms.getDocumentParts("foo bar");
+            var documentParts = metaDataParser.getDocumentParts("foo bar");
             assert.isNull(documentParts.meta);
             assert.equal(documentParts.content, "foo bar");
 
@@ -30,7 +30,7 @@ describe("Yaml", function () {
 
         it("should have no content", function () {
 
-            var documentParts = cms.getDocumentParts("---\nfoobar\n---");
+            var documentParts = metaDataParser.getDocumentParts("---\nfoobar\n---");
             assert.equal(documentParts.meta, "\nfoobar\n");
             assert.equal(documentParts.content, "");
 
@@ -42,7 +42,7 @@ describe("Yaml", function () {
 
         it("should parse yaml within markdown", function () {
 
-            var meta = cms.metaDataParser(content);
+            var meta = metaDataParser(content).meta;
 
             assert.deepEqual(meta, {
                 title: "Company History",
@@ -53,15 +53,15 @@ describe("Yaml", function () {
         });
 
         it("should not find meta data for null", function () {
-            assert.isNull(cms.metaDataParser(null));
+            assert.deepEqual(metaDataParser(null).meta, {});
         });
 
         it("should not find meta data for empty string", function () {
-            assert.isNull(cms.metaDataParser(""));
+            assert.deepEqual(metaDataParser("").meta, {});
         });
 
         it("should not find meta data if there is no meta data", function () {
-            assert.isNull(cms.metaDataParser("h2\n---\nfoo"));
+            assert.deepEqual(metaDataParser("h2\n---\nfoo").meta, {});
         });
     });
 
