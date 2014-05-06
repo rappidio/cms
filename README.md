@@ -1,4 +1,4 @@
 CMS
 ===
 
-A git express based cms
+A git and express.js based cms
