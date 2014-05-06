@@ -6,7 +6,7 @@ describe("PathMapping", function () {
 
     var paths = {
         "/": {
-            "": ["index.xml", "index.md"]
+            "": ["index.xml", "index.html", "index.md"]
         },
         // de_AT
         "about": {
