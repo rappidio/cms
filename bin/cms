@@ -1,0 +1,52 @@
+#!/usr/bin/env node
+
+var nodemon,
+    srv,
+    argv = require('yargs')
+        .usage('Usage: $0 <site>')
+
+        .alias('e', 'environment')
+        .describe('e', 'the environment to load from the env folder')
+
+        .alias('p', 'port')
+        .default('p', 3000)
+        .describe('p', 'the http port to listen')
+
+        .describe('autoreload', false)
+        .boolean('autoreload')
+
+        .demand(1)
+        .argv;
+
+if (argv.autoreload) {
+    // TODO: see https://github.com/remy/nodemon/blob/master/doc/requireable.md
+}
+
+process.on('uncaughtException', function (err) {
+    console.error('Caught exception: ' + err);
+});
+
+// we're a server so resume
+process.stdin.resume();
+
+process.on('SIGINT', function () {
+    if (srv) {
+        srv.close();
+    }
+
+    process.exit(1);
+});
+
+var server = require("../lib/server"),
+    http = require('http'),
+    express = require("express");
+
+var app = server(argv._);
+
+app.use(express.logger());
+app.use(express.bodyParser());
+
+srv = http.createServer(app).listen(argv.p);
+
+
+
