@@ -4,7 +4,7 @@
   "description": "A proof of concept to deliver dynamic pages from git.",
   "main": "index.js",
   "scripts": {
-    "test": "grunt test"
+    "test": "node_modules/mocha/bin/mocha -R spec"
   },
   "author": "rappid.io GbR <support@rappid.io> (http://rappid.io)",
   "contributors": [
