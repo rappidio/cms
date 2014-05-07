@@ -40,7 +40,9 @@ process.on('SIGINT', function () {
 var server = require("../lib/server"),
     http = require('http');
 
-var app = server(argv._);
+var app = server(argv._, {
+    environment: argv.e
+});
 
 app.use(require('morgan'));
 app.use(require("body-parser")());
