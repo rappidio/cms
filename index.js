@@ -4,8 +4,8 @@ var server = require("./lib/server"),
 
 var app = server(["site"]);
 
-app.use(express.logger());
-app.use(express.bodyParser());
+app.use(require('morgan'));
+app.use(require("body-parser")());
 
 http.createServer(app).listen(3000);
 

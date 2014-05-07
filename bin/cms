@@ -38,13 +38,12 @@ process.on('SIGINT', function () {
 });
 
 var server = require("../lib/server"),
-    http = require('http'),
-    express = require("express");
+    http = require('http');
 
 var app = server(argv._);
 
-app.use(express.logger());
-app.use(express.bodyParser());
+app.use(require('morgan'));
+app.use(require("body-parser")());
 
 srv = http.createServer(app).listen(argv.p);
 

@@ -13,7 +13,6 @@
   ],
   "license": "MIT",
   "dependencies": {
-    "express": "~3.4.7",
     "colors": "~0.6.2",
     "js-yaml": "~3.0.0",
     "flow.js": "~0.2.6",
@@ -25,7 +24,10 @@
     "node-sass": "~0.8.3",
     "cssmin": "~0.4.1",
     "uglify-js": "~2.4.13",
-    "underscore": "~1.6.0"
+    "underscore": "~1.6.0",
+    "express": "~4.1.1",
+    "morgan": "~1.0.1",
+    "body-parser": "~1.0.2"
   },
   "devDependencies": {
     "mocha": "~1.16.1",
