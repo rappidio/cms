@@ -1,6 +1,5 @@
 var server = require("./lib/server"),
-    http = require('http'),
-    express = require("express");
+    http = require('http');
 
 var app = server(["site"]);
 
